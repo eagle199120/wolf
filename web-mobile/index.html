@@ -37,7 +37,7 @@
   <!--<link rel="apple-touch-icon" href=".png" />-->
   <!--<link rel="apple-touch-icon-precomposed" href=".png" />-->
 
-  <link rel="stylesheet" type="text/css" href="style-mobile.25fc5.css"/>
+  <link rel="stylesheet" type="text/css" href="style-mobile.c7cf0.css"/>
 
 </head>
 <body>
@@ -45,13 +45,13 @@
   <div id="splash">
   </div>
 
-<script src="src/settings.3d92d.js" charset="utf-8"></script>
+<script src="src/settings.57c5d.js" charset="utf-8"></script>
 
 <script src="https://cdn.agora.io/sdk/web/AgoraRTCSDK-2.5.2.js" charset="utf-8"></script>
 
-<script src="vconsole.min.js" charset="utf-8"></script>
+<script src="vconsole.min.b4521.js" charset="utf-8"></script>
 
-<script src="main.18b17.js" charset="utf-8"></script>
+<script src="main.27642.js" charset="utf-8"></script>
 
 <script type="text/javascript">
 (function () {
@@ -59,10 +59,6 @@
     if (typeof VConsole !== 'undefined') {
         window.vConsole = new VConsole();
     }
-
-    var debug = window._CCSettings.debug;
-    var splash = document.getElementById('splash');
-    splash.style.display = 'block';
 
     function loadScript (moduleName, cb) {
       function scriptLoaded () {
@@ -77,13 +73,8 @@
       document.body.appendChild(domScript);
     }
 
-    loadScript(debug ? 'cocos2d-js.js' : 'cocos2d-js-min.c0c41.js', function () {
-      if (CC_PHYSICS_BUILTIN || CC_PHYSICS_CANNON) {
-        loadScript(debug ? 'physics.js' : 'physics-min.js', window.boot);
-      }
-      else {
-        window.boot();
-      }
+    loadScript('cocos2d-js-min.c0c41.js', function () {
+      window.boot();
     });
 })();
 </script>
